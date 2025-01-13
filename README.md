@@ -6,3 +6,6 @@ Steps:
 4. setting yourproject/prj.conf
 5. setting yourproject/src/main.c
 6. build your project and flash it to your board then you can read the data of accel/gyro/mag/temp
+
+  Thanks to this Repo, I've added the magnetmeter driver.
+  https://github.com/Gary-zzy/Nordic_icm20948-driver.git
