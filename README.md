@@ -1,5 +1,7 @@
 this is a driver of nrf5340dk and icm20948(using nrf connect in vscode)
+
 Steps:
+
 1. put imu.c/hal.c/imu.h/hal.h into yourproject/src (where is the same place as main.c)
 2. setting yourproject/nrf5340dk_nrf5340_cpuapp.overlay
 3. setting yourproject/CMakeLists.txt
