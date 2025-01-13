@@ -1,0 +1,41 @@
+// To get started, press Ctrl+Space to bring up the completion menu and view the available nodes.
+
+// You can also use the buttons in the sidebar to perform actions on nodes.
+// Actions currently available include:
+
+// * Enabling / disabling the node
+// * Adding the bus to a bus
+// * Removing the node
+// * Connecting ADC channels
+
+// For more help, browse the DeviceTree documentation at https://docs.zephyrproject.org/latest/guides/dts/index.html
+// You can also visit the nRF DeviceTree extension documentation at https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/ncs_configure_app.html#devicetree-support-in-the-extension
+&i2c1 {
+	status = "okay";
+	// compatible = "st,stm32-i2c-v1";
+	compatible = "nordic,nrf-twim";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+	// clock-frequency = <100000>;
+	pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    icm20948: icm20948@68{
+        compatible = "invensense,icm20948";
+        reg = <0x68>;
+        // label = "mysensor_icm20948";
+		status = "okay";
+
+    };
+};
+// &arduino_i2c {
+//     status = "okay";
+//     clock-frequency = <100000>;  // 设置 I2C 频率为 400kHz
+
+//     icm20948: icm20948@68 {
+//         // compatible = "invensense,icm20948";
+// 		compatible = "i2c-device";
+//         reg = <0x68>;           // ICM20948 的 I2C 地址
+//         status = "okay";
+//     };
+// };
